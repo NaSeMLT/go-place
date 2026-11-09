@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#1769e0"><meta name="description" content="GO PLACE — находи интересные места в своём городе"><title>GO PLACE</title><link rel="manifest" href="manifest.webmanifest"><link rel="icon" href="icon.svg"><link rel="stylesheet" href="styles.css"></head>
+<body><div class="app">
+<header><a class="brand" href="#"><b>G</b> GO <strong>PLACE</strong></a><span class="avatar">G</span></header>
+<main>
+<section class="hero"><small>ТВОЙ ГОРОД — ТВОИ ОТКРЫТИЯ</small><h1>Открой для себя<br><em>новые места</em></h1><p>Находи, сохраняй и планируй, куда отправиться.</p><div class="hero-pin">⌖</div></section>
+<section class="city"><div><small>СЕЙЧАС ВЫБРАН ГОРОД</small><button id="cityBtn">⌖ <b id="cityName">Геленджик</b>⌄</button></div><span class="tag">Россия</span></section>
+<label class="search">⌕ <input id="search" placeholder="Куда хочешь отправиться?" type="search"><button id="clear" hidden>×</button></label>
+<section class="section"><div class="heading"><div><small>ВЫБИРАЙ ПО НАСТРОЕНИЮ</small><h2>Категории</h2></div></div>
+<div class="categories" id="categories">
+<button class="active" data-cat="Все"><i>✦</i>Все места</button><button data-cat="Еда"><i>♨</i>Еда</button><button data-cat="Отдых"><i>≈</i>Отдых</button><button data-cat="Развлечения"><i>✧</i>Развлечения</button><button data-cat="Природа"><i>❋</i>Природа</button>
+</div></section>
+<section class="section"><div class="heading"><div><small>ПОДБОРКА ДЛЯ ТЕБЯ</small><h2 id="listTitle">Популярные места</h2></div><button class="link" id="reset">Сбросить</button></div>
+<div class="filters"><label>Сортировка<select id="sort"><option value="popular">Популярность</option><option value="rating">Рейтинг</option><option value="reviews">Отзывы</option><option value="price">Сначала дешевле</option></select></label><label>Цена<select id="price"><option value="all">Любая</option><option value="1">Бюджетно</option><option value="2">Средняя</option><option value="3">Выше средней</option></select></label></div>
+<p class="note" id="note">Демонстрационный каталог · данные требуют проверки</p><div class="places" id="places"></div><div id="empty" class="empty" hidden><h3>Ничего не найдено</h3><p>Измени запрос или фильтры.</p><button class="primary" id="emptyReset">Сбросить фильтры</button></div></section>
+</main>
+<nav><button class="selected" data-tab="home">⌂<small>Главная</small></button><button data-tab="search">⌕<small>Поиск</small></button><button data-tab="favorites">♡<small>Избранное</small><sup id="favCount" hidden>0</sup></button><button data-tab="profile">○<small>Профиль</small></button></nav></div>
+<div class="shade" id="cityModal" hidden><div class="modal"><div class="modalhead"><div><small>ВЫБОР ЛОКАЦИИ</small><h2>Выбери город</h2></div><button class="x" data-close="cityModal">×</button></div><p>Города для демонстрации интерфейса.</p><div id="cityOptions"></div></div></div>
+<div class="shade" id="detailModal" hidden><div class="modal"><div id="detail"></div><button class="primary wide" data-close="detailModal">Понятно</button></div></div><div class="toast" id="toast"></div><script src="app.js"></script></body></html>
